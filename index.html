@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mini Music Player</title>
+    <link rel="icon" type="image/png" href="assets/Tune_Box_Logo.png">
+    <link href="https://fonts.googleapis.com/css?family=Lilita+One|Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6a7b06fa43.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="player-header">
+            <audio id="player">
+                <source id="source" src="">
+                Audio not supported
+            </audio>
+
+            <div class="current">
+                <!-- Currently playing song -->
+                <div class="currentPlayingInfo">
+                    <span id="currentlyPlaying"></span><em><span id="currentSong"></span></em>
+                    <!-- <i class="fas fa-ellipsis-v"></i> -->
+                    <span id="info">More Info</span>
+                </div>
+
+                <!-- Song Info -->
+                <div id="songInfo" class="songInfo">
+                    <div class="albumArt">
+                        <img id="albumCover" src="">
+                    </div>
+                    <div class="moreInfo">
+                        <p id="albumTitle"></p>
+                        <p id="albumYear"></p>
+                    </div>
+                </div>
+
+                <div class="songProgress">
+                    <!-- Progress Bar -->
+                    <progress id="progress" value="0" max="100"></progress>
+
+                    <!-- Song current time -->
+                    <span id="tracktime"></span>
+                </div>
+            </div>
+
+            <!-- Custom controls -->
+            <div id="controls">
+                <div class="play-controls">
+                    <i class="fas fa-chevron-circle-left fa-2x" onclick="prev()"></i>
+                    <i class="far fa-play-circle fa-2x" onclick="playAudio()"></i>
+                    <i class="far fa-pause-circle fa-2x" onclick="pauseAudio()"></i>
+                    <i class="far fa-stop-circle fa-2x" onclick="stopAudio()"></i>
+                    <i class="fas fa-chevron-circle-right fa-2x" onclick="next()"></i>
+                </div>
+
+                <div id="volume-controls">
+                    <i class="fas fa-volume-up"></i>
+                    <div class="volume-range">
+                        <input type="range" id="volumeSlider" min="0" max="1" value="0.5" step="0.01">
+                        <span id="volume">Volume</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="logo">
+                <h1>Tune<br><span>Box</span></h1>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav-app">
+            <ul>
+                <li><a href="#">Albums</a></li>
+                <li><a href="#">Songs</a></li>
+                <li><a href="#">Artists</a></li>
+                <li><a href="#">Search</a></li>
+            </ul>
+        </nav>
+
+        <!-- Playlist -->
+        <div id="songList" class="playlist">
+        </div>
+
+        <p class="disclaimer">Disclaimer: Songs and cover art used for demo purposes. All rights belong to the
+            respective owners.</p>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
